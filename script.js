@@ -30,9 +30,9 @@ const DEL = document.querySelector('[data-delete]')
 
 const calculator = new Calculator(previousOutputTextElement, currentOutputTextElement)
 
-numberButton.forEach(button => {
+numberButton.forEach(button => { //issue here
     button.AddEventListener('click', () => {
         calculator.appendNumber(button.innerText)
-        calculator.updateDisplay()
+        calculator.updateDisplay() 
     })
 })
