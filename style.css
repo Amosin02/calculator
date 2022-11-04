@@ -37,6 +37,7 @@ body{
 .container .ac{
     background-color: #ff9b51;
     color: black;
+    grid-column: span 2;
 }
 
 .container .span-2{
