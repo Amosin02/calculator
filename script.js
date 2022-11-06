@@ -20,18 +20,32 @@ class Calculator{
         this.previousOutputTextElement.innerText = this.previousOutput
      }
 
+    delete(){
+        const temp = this.currentOutput.split('')
+        temp.splice(-1, 1)
+        this.currentOutput = temp.join('')
+    }
+
     getoperator(op){
         if(this.currentOutput === '')return
         this.operation = op
         this.previousOutput = this.currentOutput
-        this.currentOutput = ''
-        //this.operate()
+        if(this.currentOutput !== ''){
+            this.currentOutput = ''
+            this.operate
+            console.log('fuck')
+        } else 
+        console.log('what')
+        this.operate()
     }
 
     operate(){
         let symbol = this.operation
         const left = this.previousOutput
         const right = this.currentOutput
+        console.log(left)
+        console.log(right)
+        if(right !== ''){
         switch(symbol){
             case '/':
                 this.currentOutput = left / right
@@ -45,8 +59,10 @@ class Calculator{
             case '-':
                 this.currentOutput = left - right
                 break
-        } 
-        this.previousOutput = ''
+
+                
+        } this.previousOutput = '' }
+        
     }
 }
 
@@ -81,5 +97,10 @@ equals.addEventListener('click', () =>{
 
 allClear.addEventListener('click', () =>{
     calculator.clear()
+    calculator.updateDisplay()
+})
+
+DEL.addEventListener('click', () =>{
+    calculator.delete()
     calculator.updateDisplay()
 })
