@@ -40,6 +40,11 @@ body{
     grid-column: span 2;
 }
 
+.container .operation{
+    color: rgb(73, 74, 76);
+    background-color:  #ff9b51;
+}
+
 .container .span-2{
     grid-column: span 2;
 }
