@@ -30,11 +30,7 @@ class Calculator{
         if(this.currentOutput === '')return
         this.operation = op
         this.previousOutput = this.currentOutput
-        if(this.currentOutput !== ''){
-            this.currentOutput = ''
-            this.operate
-            console.log('fuck')
-        } else 
+        this.currentOutput = ''
         console.log('what')
         this.operate()
     }
@@ -43,25 +39,27 @@ class Calculator{
         let symbol = this.operation
         const left = this.previousOutput
         const right = this.currentOutput
+        this.answer
         console.log(left)
         console.log(right)
         if(right !== ''){
         switch(symbol){
             case '/':
-                this.currentOutput = left / right
+                this.answer = left / right
                 break
             case '*':
-                this.currentOutput = left * right
+                this.answer = left * right
                 break
             case '+':
-                this.currentOutput = parseFloat(left) + parseFloat(right)
+                this.answer = parseFloat(left) + parseFloat(right)
                 break
             case '-':
-                this.currentOutput = left - right
+                this.answer = left - right
                 break
 
                 
-        } this.previousOutput = '' }
+        } this.currentOutput = this.answer.toString()
+        this.previousOutput= '' }
         
     }
 }
