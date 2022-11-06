@@ -27,21 +27,22 @@ class Calculator{
     }
 
     getoperator(op){
+        const kanan = this.previousOutput
         if(this.currentOutput === '')return
+        if(kanan !== ''){
+            this.operate()
+        }
         this.operation = op
         this.previousOutput = this.currentOutput
         this.currentOutput = ''
-        console.log('what')
         this.operate()
     }
 
     operate(){
-        let symbol = this.operation
+        const symbol = this.operation
         const left = this.previousOutput
         const right = this.currentOutput
         this.answer
-        console.log(left)
-        console.log(right)
         if(right !== ''){
         switch(symbol){
             case '/':
@@ -58,9 +59,9 @@ class Calculator{
                 break
 
                 
-        } this.currentOutput = this.answer.toString()
+        }
+        this.currentOutput = this.answer.toString()
         this.previousOutput= '' }
-        
     }
 }
 
